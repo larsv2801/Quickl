@@ -1,0 +1,142 @@
+  <!DOCTYPE html>
+<html style="scroll-behavior: smooth">
+<head>
+  <title>QuickLauch</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="https://img.icons8.com/?size=100&id=CNwCliesWEeX&format=png&color=000000">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://img.icons8.com/?size=100&id=CNwCliesWEeX&format=png&color=000000">
+  <link rel="icon" type="image/png" sizes="48x48" href="https://img.icons8.com/?size=100&id=CNwCliesWEeX&format=png&color=000000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="QuickLaunch biedt een eenvoudige en overzichtelijke interface waarmee je direct toegang krijgt tot je meest bezochte websites. Met één klik open je populaire sites zoals Google, YouTube, en meer. Deze tool is perfect voor mensen die efficiënt willen browsen zonder tijd te verspillen aan het typen van webadressen. Personaliseer je ervaring door je achtergrond en accentkleur aan te passen voor een uniekere ervaring.">
+    <link
+      rel="stylesheet"
+      data-purpose="Layout StyleSheet"
+      title="Web Awesome"
+      href="/css/app-wa-d53d10572a0e0d37cb8d614a3f177a0c.css?vsn=d"
+    >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-thin.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-solid.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-regular.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.2/css/sharp-light.css"
+      >
+<style>
+:root {
+  --primary: #ec844d;
+  --secondary: #ffd8b2;
+  --thirth:#ffedd5;
+}
+body{
+margin:0;
+padding:0;
+background-color:var(--secondary);
+}
+#boven{
+width:100vw;
+height:50vh;
+position:absolute;
+top:0;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+#onder{
+width:100vw;
+height:20vh;
+position:absolute;
+top:80vh;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+i{
+color: var(--thirth);
+width: 7vw; /* Limiteert de maximale grootte van de SVG */
+height: 7vw; /* Limiteert de maximale hoogte van de SVG */
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden; /* Zorgt ervoor dat de SVG niet buiten de cirkel komt */
+box-sizing: border-box;
+}
+#uur{
+width:25vw;
+height:25vw;
+border-radius:25px;
+background-color:var(--primary);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:12vw;
+font-family:arial;
+color:white;
+}
+#minuten{
+width:25vw;
+height:25vw;
+border-radius:25px;
+background-color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:12vw;
+font-family:arial;
+color:var(--primary);
+}
+#dubbelepunt{
+font-size:12vw;
+color:white;
+}
+</style>
+<body>
+
+<div id="boven">
+  <div id="uurdiv">
+    <h1 id="uur"></h1>
+  </div>
+  <h1 id="dubbelepunt">:</h1>
+  <div id="minutendiv">
+    <h1 id="minuten"></h1>
+  </div>
+</div>
+
+<div id="onder">
+  <div id="categorien">
+  <div class="circkel">
+    <i class="fa-solid fa-briefcase"></i>
+  </div>
+  </div>
+</div>
+<script>
+  function updateclock() {
+const m = new Date();
+document.getElementById("minuten").innerHTML = m.getMinutes();
+const d = new Date();
+document.getElementById("uur").innerHTML = d.getHours();
+const time = new Date().getHours();
+let greeting;
+}
+
+ updateclock();
+
+        setInterval(updateclock, 10000);
+</script>
+</body>
