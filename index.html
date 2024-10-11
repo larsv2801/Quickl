@@ -69,13 +69,26 @@ justify-content:center;
 }
 i{
 color: var(--thirth);
-width: 7vw; /* Limiteert de maximale grootte van de SVG */
-height: 7vw; /* Limiteert de maximale hoogte van de SVG */
+font-size:3.5vw;/* Limiteert de maximale hoogte van de SVG */
+}
+.circkel{
+width: 6vw;
+height:6vw;
+border-radius: 50px;
+background-color: var(--primary);
 display: flex;
 align-items: center;
 justify-content: center;
 overflow: hidden; /* Zorgt ervoor dat de SVG niet buiten de cirkel komt */
 box-sizing: border-box;
+margin:0.7vw;
+transition:0.1s;
+}
+.circkel:hover{
+transition:0.15s;
+width: 6.5vw;
+height:6.5vw;
+margin:0.45vw;
 }
 #uur{
 width:25vw;
@@ -88,6 +101,13 @@ justify-content:center;
 font-size:12vw;
 font-family:arial;
 color:white;
+}
+#categorien{
+display:flex;
+width:100vw;
+height:15vh;
+align-items:center;
+justify-content:center;
 }
 #minuten{
 width:25vw;
@@ -104,6 +124,9 @@ color:var(--primary);
 #dubbelepunt{
 font-size:12vw;
 color:white;
+}
+#play{
+margin-left:0.2vw;
 }
 </style>
 <body>
@@ -123,6 +146,15 @@ color:white;
   <div class="circkel">
     <i class="fa-solid fa-briefcase"></i>
   </div>
+  <div class="circkel">
+    <i id="play"class="fa-solid fa-play"></i>
+  </div>
+  <div class="circkel">
+    <i class="fa-solid fa-message"></i>
+  </div>
+  <div class="circkel">
+    <i class="fa-solid fa-gamepad"></i>
+  </div>
   </div>
 </div>
 <script>
@@ -140,3 +172,4 @@ let greeting;
         setInterval(updateclock, 10000);
 </script>
 </body>
+
