@@ -128,12 +128,56 @@ color:white;
 #play{
 margin-left:0.2vw;
 }
+.groep{
+width:18vw;
+height:22vw;
+border-radius:25px;
+background-color:var(--primary);
+position:absolute;
+top:-23vw;
+border:solid white;
+padding:1.5vw;
+gap:1vw;
+transition:0.2s;
+overflow:hidden;
+flex-wrap:wrap;
+/*justify-content:space-evenly;*/
+align-content: flex-start; 
+}
+#werkgroep{
+left:35vw;
+display:none;
+}
+#mediagroep{
+left:43vw;
+display:none;
+}
+#socialgroep{
+left:50vw;
+display:none;
+}
+#gamegroep{
+left:57vw;
+display:none;
+}
+.groep i:hover{
+color:white;
+transition:0.2s;
+}
+.groep i{
+display:block;
+height:4vw;
+transition:0.2s;
+margin-bottom:0;
+margin-top:0;
+  margin: 0;
+}
 </style>
 <body>
 
-<div id="boven">
+<div onclick="verdwijngroep()" id="boven">
   <div id="uurdiv">
-    <h1 id="uur"></h1>
+    <h1 onclick="verdwijngroep()" id="uur"></h1>
   </div>
   <h1 id="dubbelepunt">:</h1>
   <div id="minutendiv">
@@ -143,16 +187,20 @@ margin-left:0.2vw;
 
 <div id="onder">
   <div id="categorien">
-  <div class="circkel">
+  <div id="werkgroep" class="groep"><i class="fa-brands fa-google-drive"></i><i class="fa-brands fa-linkedin"></i><i class="fa-regular fa-calendar"></i><i class="fa-brands fa-github"></i></div>
+  <div onclick="verschijngroep('werkgroep')" class="circkel">
     <i class="fa-solid fa-briefcase"></i>
   </div>
-  <div class="circkel">
+  <div id="mediagroep" class="groep"><i class="fa-brands fa-youtube"></i><i class="fa-brands fa-spotify"></i><i class="fa-brands fa-twitch"></i></div>
+  <div onclick="verschijngroep('mediagroep')"  class="circkel">
     <i id="play"class="fa-solid fa-play"></i>
   </div>
-  <div class="circkel">
+  <div id="socialgroep" class="groep"><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-facebook"></i><i class="fa-brands fa-x-twitter"></i><i class="fa-brands fa-snapchat"></i><i class="fa-brands fa-tiktok"></i><i class="fa-brands fa-whatsapp"></i><i class="fa-brands fa-discord"></i></div>
+  <div onclick="verschijngroep('socialgroep')"  class="circkel">
     <i class="fa-solid fa-message"></i>
   </div>
-  <div class="circkel">
+  <div id="gamegroep" class="groep"><i class="fa-brands fa-steam-symbol"></i><i class="fa-brands fa-twitch"></i><i class="fa-brands fa-discord"></i><i class="fa-brands fa-playstation"></i><i class="fa-brands fa-xbox"></i></div>
+  <div onclick="verschijngroep('gamegroep')"  class="circkel">
     <i class="fa-solid fa-gamepad"></i>
   </div>
   </div>
@@ -170,6 +218,19 @@ let greeting;
  updateclock();
 
         setInterval(updateclock, 10000);
+ 
+function verschijngroep(groep){
+document.getElementById("werkgroep").style.display = "none";
+document.getElementById("socialgroep").style.display = "none";
+document.getElementById("gamegroep").style.display = "none";
+document.getElementById("mediagroep").style.display = "none";
+document.getElementById(groep).style.display = "flex";
+}
+function verdwijngroep(){
+document.getElementById("werkgroep").style.display = "none";
+document.getElementById("socialgroep").style.display = "none";
+document.getElementById("gamegroep").style.display = "none";
+document.getElementById("mediagroep").style.display = "none";
+}
 </script>
 </body>
-
