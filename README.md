@@ -5,8 +5,8 @@
 ## Features
 
 - **Snelkoppelingen** naar populaire websites en applicaties
-- **Categorieën** om je links te ordenen (bijv. Werk, Media, Social, Games)
-- **Kleurpalet opties** om de interface te personaliseren
+- **Categorieën** om je links te ordenen (Werk, Media, Social, Games)
+- **Kleurpalet opties** om de interface te personaliseren(coming soon!)
 - **Responsive ontwerp** geschikt voor zowel desktop als mobiel
 - **Eenvoudige en intuïtieve gebruikersinterface**
 
@@ -17,7 +17,7 @@ Bekijk de website hier: [QuickLaunch Demo](https://larsv2801.github.io/QuickLaun
 ## Gebruik
 
 1. **Navigatie:** Selecteer een categorie door op de cirkels onderaan te klikken om de bijbehorende snelkoppelingen te tonen.
-2. **Kleuren aanpassen:** In de instellingen kun je uit verschillende kleurpaletten kiezen om de look van de website aan te passen.
+2. **Kleuren aanpassen:** In de instellingen kun je uit verschillende kleurpaletten kiezen om de look van de website aan te passen.(coming soon!)
 3. **Snelkoppelingen:** Klik eenvoudig op de icoontjes om direct naar de bijbehorende websites te gaan.
 
 ## Installatie
