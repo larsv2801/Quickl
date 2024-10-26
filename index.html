@@ -1,3 +1,4 @@
+
   <!DOCTYPE html>
 <html style="scroll-behavior: smooth">
 <head>
@@ -175,9 +176,78 @@ margin-top:0;
 a {
   text-decoration: none;
 }
+.settings{
+width:100vw;
+height:100vh;
+display:none;
+z-index:999;
+position:absolute;
+background:linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0));
+backdrop-filter:blur(10px);
+transition:0.4s;
+top:0;
+}
+.blur{
+flex:2;
+transition:0.4s;
+}
+.settingspanel {
+  flex: 1;
+  background-color: white;
+  border-radius: 15px;
+  text-align: center;
+  font-family: Arial;
+  display: flex;
+  flex-direction: row; /* Knoppen onder elkaar */
+  padding: 2vw;
+  transition:0.4s;/* Voeg padding toe voor ruimtelijkheid */
+}
+.settingspanel button {
+  height: 5vw;
+  width: 5vw;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  margin: 0.9vw;
+  display: block;
+  text-align:center;
+  padding:0;
+  transition:0.4s;
+}
+.settingspanel h2 {
+  margin-top: 2vw;
+  color: var(--primary);
+  text-align: center;
+  position:absolute;
+  top:1vw;
+  left:82%;
+  transform:translate(-50%,-20%);
+  transition:0.4s;/* Zet de h2 in het midden */
+}
+.kleuren{
+display:flex;
+flex-direction: row;
+height:7vw;
+margin-top:7vw;
+width:100%;
+justify-content:center;
+transition:0.4s;
+}
 </style>
 <body>
-
+<div id="settings" class="settings">
+<div class="blur"></div>
+<div class="settingspanel">
+<h2>color</h2>
+<br>
+<div class="kleuren">
+<button style="background-color:#4382ec;color:white;"onclick="">blue</button>
+<button style="background-color:#ec844d;color:white;"onclick="">orange</button>
+<button style="background-color:#5cba5c;color:white;"onclick="">green</button>
+<button style="background-color:#ec4343;color:white;"onclick="">red</button>
+</div>
+</div>
+</div>
 <div onclick="verdwijngroep()" id="boven">
   <div id="uurdiv">
     <h1 onclick="verdwijngroep()" id="uur"></h1>
@@ -261,6 +331,20 @@ document.getElementById("socialgroep").style.display = "none";
 document.getElementById("gamegroep").style.display = "none";
 document.getElementById("mediagroep").style.display = "none";
 }
+</script>
+<script>
+var set = 0;
+document.addEventListener("keydown", function(event) {
+  if (event.key === "ArrowUp") {
+    if(set === 0){
+    document.getElementById('settings').style.display = "flex";
+    set = 1;
+    } else {
+    set = 0;
+    document.getElementById('settings').style.display = "none";
+    }
+  }
+  });
 </script>
 </body>
 
