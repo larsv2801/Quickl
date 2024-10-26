@@ -183,7 +183,7 @@ display:none;
 z-index:999;
 position:absolute;
 background:linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0));
-backdrop-filter:blur(10px);
+backdrop-filter:blur(6px);
 transition:0.4s;
 top:0;
 }
@@ -241,10 +241,10 @@ transition:0.4s;
 <h2>color</h2>
 <br>
 <div class="kleuren">
-<button style="background-color:#4382ec;color:white;"onclick="">blue</button>
-<button style="background-color:#ec844d;color:white;"onclick="">orange</button>
-<button style="background-color:#5cba5c;color:white;"onclick="">green</button>
-<button style="background-color:#ec4343;color:white;"onclick="">red</button>
+<button onclick="changeColors('#4382ec', '#bbd6fd', '#e2eeff')" style="background-color:#4382ec;color:white;"onclick="">blue</button>
+<button onclick="changeColors('#ec844d', '#ffd8b2', '#ffedd5')"  style="background-color:#ec844d;color:white;"onclick="">orange</button>
+<button onclick="changeColors('#5cba5c', '#c7e4c7', '#e1f1e1')"  style="background-color:#5cba5c;color:white;"onclick="">green</button>
+<button onclick="changeColors('#ec4343', '#fdbdbd', '#ffe7e7')"  style="background-color:#ec4343;color:white;"onclick="">red</button>
 </div>
 </div>
 </div>
@@ -345,6 +345,13 @@ document.addEventListener("keydown", function(event) {
     }
   }
   });
+</script>
+<script>
+function changeColors(primary, secondary, tertiary) {
+  document.documentElement.style.setProperty('--primary', primary);
+  document.documentElement.style.setProperty('--secondary', secondary);
+  document.documentElement.style.setProperty('--thirth', tertiary);
+}
 </script>
 </body>
 
