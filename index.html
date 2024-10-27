@@ -234,17 +234,17 @@ justify-content:center;
 transition:0.4s;
 }
 </style>
-<body>
+<body onload="lod()">
 <div id="settings" class="settings">
 <div class="blur"></div>
 <div class="settingspanel">
 <h2>color</h2>
 <br>
 <div class="kleuren">
-<button onclick="changeColors('#4382ec', '#bbd6fd', '#e2eeff')" style="background-color:#4382ec;color:white;"onclick="">blue</button>
-<button onclick="changeColors('#ec844d', '#ffd8b2', '#ffedd5')"  style="background-color:#ec844d;color:white;"onclick="">orange</button>
-<button onclick="changeColors('#5cba5c', '#c7e4c7', '#e1f1e1')"  style="background-color:#5cba5c;color:white;"onclick="">green</button>
-<button onclick="changeColors('#ec4343', '#fdbdbd', '#ffe7e7')"  style="background-color:#ec4343;color:white;"onclick="">red</button>
+<button onclick="changeColors('#4382ec', '#bbd6fd', '#e2eeff');sav('blue')" style="background-color:#4382ec;color:white;"onclick="">blue</button>
+<button onclick="changeColors('#ec844d', '#ffd8b2', '#ffedd5');sav('orange')"  style="background-color:#ec844d;color:white;"onclick="">orange</button>
+<button onclick="changeColors('#5cba5c', '#c7e4c7', '#e1f1e1');sav('green')"  style="background-color:#5cba5c;color:white;"onclick="">green</button>
+<button onclick="changeColors('#ec4343', '#fdbdbd', '#ffe7e7');sav('red')"  style="background-color:#ec4343;color:white;"onclick="">red</button>
 </div>
 </div>
 </div>
@@ -352,6 +352,24 @@ function changeColors(primary, secondary, tertiary) {
   document.documentElement.style.setProperty('--secondary', secondary);
   document.documentElement.style.setProperty('--thirth', tertiary);
 }
+
+function sav(wkleur){
+ localStorage.setItem("kleur", wkleur);
+ }
+
+function lod(){
+var kleur1 = localStorage.getItem('kleur');
+if (kleur1){
+if (kleur1 === "blue"){
+changeColors('#4382ec', '#bbd6fd', '#e2eeff');
+} else if (kleur1 === "orange"){
+changeColors('#ec844d', '#ffd8b2', '#ffedd5');
+} else if (kleur1 === "green"){
+changeColors('#5cba5c', '#c7e4c7', '#e1f1e1');
+} else if (kleur1 === "red"){
+changeColors('#ec4343', '#fdbdbd', '#ffe7e7');
+}
+}
+}
 </script>
 </body>
-
